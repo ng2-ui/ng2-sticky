@@ -22,7 +22,7 @@ Plunker Example: https://plnkr.co/edit/ZKwAHN?p=preview
         import { FormsModule } from "@angular/forms";
         import { BrowserModule  } from '@angular/platform-browser';
         import { AppComponent } from './app.component';
-        import { Ng2stickyModule } from 'ng2-sticky';
+        import { Ng2StickyModule } from 'ng2-sticky';
         
         @NgModule({
           imports: [BrowserModule, FormsModule, Ng2StickyModule],
@@ -37,6 +37,28 @@ For full example, please check out `test` directory to see the example of;
   - `systemjs.config.js`
   - `app.module.ts`
   -  and `app.component.ts`.
+  
+## FAQ
+
+If you encounter an error similar to this:
+![Not a module](https://cloud.githubusercontent.com/assets/237025/22411777/7a0e24d8-e6e2-11e6-8f1c-1d07cf65ebdf.png)
+
+Use this method to import ng2-sticky instead:
+
+        import { NgModule } from '@angular/core';
+        import { FormsModule } from "@angular/forms";
+        import { BrowserModule  } from '@angular/platform-browser';
+        import { AppComponent } from './app.component';
+        import { Ng2StickyDirective } from 'ng2-sticky';
+        
+        @NgModule({
+          imports: [BrowserModule, FormsModule, Ng2StickyDirective],
+          declarations: [AppComponent],
+          bootstrap: [ AppComponent ]
+        })
+        export class AppModule { }
+
+
 
 ## Usage it in your code
 
